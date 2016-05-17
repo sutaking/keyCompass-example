@@ -1,0 +1,156 @@
+.btn {
+    position: relative;
+    height: 92px;
+    font: bold 28px 'Helvetica Neue Bold';
+    color: #FFF;
+}
+
+.btn.focused {
+    background-color: rgb(234, 46, 45); /*#E52B1E; 255, 43, 6*/
+    color: #FFF;
+}
+
+.btn.disabled {
+    opacity: .25;
+}
+
+.btn-play {
+    background: url("../images/icn_detail_play.png") 65px 22px no-repeat rgba(105, 105, 105, .5); /*.7*/
+}
+
+.btn-play:before {
+    content: 'PLAY';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-play-all {
+    background: url("../images/icn_detail_play.png") 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-play-all:before {
+    content: 'PLAY ALL';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-resume {
+    background: url('../images/icn_detail_play.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-resume:before {
+    content: 'RESUME';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-resume-talk {
+    background: url('../images/icn_detail_play.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-resume-talk:before {
+    content: attr(data-content); /*'RESUME TALK';*/
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-restart {
+    background: url('../images/icn_detail_restart.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-restart:before {
+    content: 'RESTART';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-restart-talk {
+    background: url('../images/icn_detail_restart.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-restart-talk:before {
+    content: attr(data-content); /*; 'RESTART TALK'*/
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-add-talks {
+    background: url('../images/icn_detail_my_talks.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-add-talks:before {
+    content: 'ADD TO MY TALKS';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-remove-talks {
+    background: url('../images/icn_detail_my_talks.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-remove-talks:before {
+    content: 'REMOVE';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+/*******/
+.playlists-btn-add-talks {
+    background: url('../images/icn_detail_my_talks.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.playlists-btn-add-talks:before {
+    content: 'ADD TO MY TALKS';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.playlists-btn-remove-talks {
+    background: url('../images/icn_detail_my_talks.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.playlists-btn-remove-talks:before {
+    content: 'REMOVE';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+/*******/
+
+.btn-about-speaker {
+    background: url('../images/icn_detail_about_speaker.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-about-speaker:before {
+    content: 'ABOUT THIS SPEAKER';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.btn-about-talk {
+    background: url('../images/icn_detail_about_speaker.png') 65px 22px no-repeat rgba(105, 105, 105, .5);
+}
+
+.btn-about-talk:before {
+    content: 'ABOUT THIS TALK';
+    line-height: 92px;
+    margin: 0 65px 0 128px;
+}
+
+.button-previous {
+    height: 48px;
+    width: 48px;
+    background-image: url("../images/icn_detail_restart.png");
+}
+
+.star-five {
+    height: 48px;
+    width: 48px;
+    background-image: url("../images/icn_detail_my_talks.png");
+}
+
+.omit {
+    height: 48px;
+    width: 48px;
+    background-image: url("../images/icn_detail_about_speaker.png");
+}

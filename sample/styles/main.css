@@ -1,0 +1,458 @@
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("../fonts/hn-045-n.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Roman";
+  src: url("../fonts/hn-055-n.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Bold";
+  src: url("../fonts/hn-075-n.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Heavy";
+  src: url("../fonts/hn-085-n.woff") format("woff");
+  font-weight: 900;
+}
+
+body {
+    margin: 0;
+    font: 32px 'Helvetica Neue Light';
+}
+
+.font-info {
+    color: #EEE;
+    font: 24px 'Helvetica Neue Roman';
+}
+
+.font-info-dark {
+    color: #a6a6a6;
+    font: 24px 'Helvetica Neue Roman';
+}
+
+.font-body {
+    color: #EEE;
+    font:28px 'Helvetica Neue Roman';
+}
+
+.font-subheader {
+    color: #EEE;
+    font: 26px 'Helvetica Neue Bold';
+}
+
+.font-label {
+    color: #EEE;
+    font: 28px 'Helvetica Neue Bold';
+    font-weight: 900;
+}
+
+.font-label-talk-in-playlist {
+    color: #EEE;
+    font: 18px 'Helvetica Neue Bold';
+}
+
+.font-caption {
+    color: #EEE;
+    font: 44px 'Helvetica Neue Bold';
+    /*-webkit-text-stroke: 2px #000000;*/
+}
+
+.font-header {
+    color: #EEE;
+    font: 48px 'Helvetica Neue Heavy';
+    margin: 10px 0;
+}
+
+.welcome {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background: url("../images/ted_tv_splash_black.png") center center no-repeat;
+    z-index: 9;
+    transition: opacity 1s ease-in;
+}
+
+.welcome.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgb(47, 9, 9), rgb(0, 0, 0) 20%);
+}
+
+.logo {
+    position: absolute;
+    top: 55px;
+    left: 112px;
+    height: 104px;
+    width: 104px;
+    background: url("../images/app_icn_ted.png") no-repeat;
+    z-index: 1;
+}
+
+.stage {
+    position: absolute;
+    width: 1920px;
+    height: 750px;
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.stage.talk {
+    background: url('../images/bkgrd_watch_anything.jpg') top right no-repeat;
+    background-size: 1252px auto;/*1252px 750px;*/
+}
+
+.stage.talk .shadow {
+    position: absolute;
+    right: 0;
+    width: 1252px;
+    height: 750px;
+    background: url('../images/bkgrd_shelf_crop.png') top right no-repeat;
+    background-size: 1252px 750px;
+}
+
+.stage.talk .shadow-big {
+    background: url('../images/bkgrd_detail_crop.png') top right no-repeat;
+    background-size: 1252px 750px;
+}
+
+.stage.playlists {
+    background: url('../images/bkgrd_watch_anything.jpg') top right no-repeat;
+    background-size: 800px auto;/*800px 750px;*/
+}
+
+.stage.playlists .shadow {
+    position: absolute;
+    right: 0px;
+    width: 800px;
+    height: 750px;
+    background: url('../images/bkgrd_shelf_playlist_crop.png') top right no-repeat;
+    background-size: 800px 750px;
+}
+
+.stage.playlists .shadow-big {
+    background: url('../images/bkgrd_detail_playlist_crop.png') top right no-repeat;
+    background-size: 800px 750px;
+}
+
+.overview {
+    position: relative;
+    width: 850px;
+    margin: 136px 0 0 112px;
+}
+
+.playlist-info {
+    height: 74px;
+}
+
+.playlist-info .image {
+    float: left;
+    width: 54px;
+    height: 54px;
+}
+
+.playlist-info .text {
+    float: left;
+    margin-left: 10px;
+}
+
+.overview .name {
+    position: relative;
+    width: 850px;
+    z-index: 1;
+}
+
+.overview .speakers {
+    position: relative;
+}
+
+.overview .more {
+    position: relative;
+    height: 70px;
+    line-height: 70px;
+}
+
+.overview.desc {
+    font-size: 30px;
+    margin: 0 0 0 112px;
+}
+
+.opacity-dark {
+    opacity: .3;
+}
+
+.opacity-light {
+    opacity: 1;
+}
+
+.stage-transition {
+    -webkit-transition: opacity .2s ease-in-out; /*, background .2s ease-in-out*/
+}
+
+.btn-wrapper {
+    position: relative;
+    margin: 70px 0 0 88px; /*64 112-24=88*/
+    height: 92px;
+}
+
+.btn-wrapper-playlist {
+    position: relative;
+    margin: 70px 0 0 88px;
+    height: 92px;
+    width: 1000px;
+}
+
+.btn-gap {
+    position: relative;
+    float: left;
+    margin-left: 24px; /*48*/
+}
+
+.list-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 1920px;
+    height: 498px;
+    top: 582px;
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.list-wrapper-playlist {
+    top: 718px;
+}
+
+.list-area {
+    width: 1920px;
+    height: 314px;
+    margin-bottom: 40px;
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+    margin-bottom: 60px;
+}
+
+.list-area.list-fadeout {
+    opacity: .2;
+}
+
+.list-area .title {
+    width: 1920px;
+    height: 28px;
+    margin: 0 0 25px 112px;
+}
+
+.list-area .title-opacity {
+    opacity: .4;
+}
+
+.list-container {
+    position: absolute;
+    width: 1920px;
+    height: 265px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.list-scroll-wrapper {
+    left: 112px;
+}
+
+.list-category {
+    -webkit-transition: transform .5s ease-in-out;
+}
+
+.watch-anything {
+    color: #EEE;
+    font: 53px 'Helvetica Neue Heavy';
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.shelf-resume-watching {
+    border-top: 32px solid rgba(234, 46, 45, 0.6); /*255, 43, 6*/
+    border-right: 20px solid transparent;
+    width: 220px;
+    margin-top: 16px;
+    position: absolute;
+}
+
+.shelf-resume-watching:before {
+    content: 'Resume watching';
+    margin: -32px 0 0 16px;
+    position: absolute;
+}
+
+.shelf-resume-progress-bar {
+    position: absolute;
+    width: 467px;
+    background-color: #a6a6a6;
+    height: 8px;
+    bottom: 0;
+    opacity: .95;
+    z-index: 1;
+}
+
+.shelf-resume-progress-bar .active {
+    width: 1px;
+    background-color: rgb(234, 46, 45); /* 255, 43, 6 */
+    opacity: .9;
+    z-index: 2;
+}
+
+.item {
+    position: relative;
+    width: 474px;
+    height: 265px;
+    -webkit-box-sizing: border-box;
+    margin: 0 24px 0 0;
+    border: 4px solid #262626;
+}
+
+.item-blank {
+    border: 0;
+}
+
+.item-playlist {
+    width: 265px;
+}
+
+.item .content {
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+}
+
+.item .content span {
+    position: absolute;
+    margin: 18px;
+    text-align: center;
+    line-height: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    background-color: rgb(234, 46, 45); /*255, 43, 6*/
+}
+
+.item .content .text {
+    position: absolute;
+    width: 438px;
+    bottom: 0;
+    padding: 10px 15px 24px 15px;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.item .content .playlist-text {
+    position: absolute;
+    width: 228px;
+    bottom: 0;
+    padding: 10px 15px 24px 15px;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.shelf-my-talks {
+    float: right;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    background: url("../images/icn_shelf_my_talks.png") no-repeat;
+}
+
+.shelf-watched {
+    float: right;
+    right: 8px;
+    top: 0;
+    margin-left: 6px;
+    width: 26px;
+    height: 26px;
+    background: url("../images/icn_shelf_watched.png") no-repeat;
+}
+
+.item.focused {
+    border: 4px solid #EEE;
+}
+
+.item-blank.focused {
+    border: 0;
+}
+
+.related-talk {
+    position: absolute;
+    overflow: hidden;
+    width: 1920px;
+    height: 498px;
+    top: 950px;
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.move-container {
+    position: absolute;
+    left: 0;
+    -webkit-transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+.page {
+    position: absolute;
+    opacity: 1;
+    -webkit-transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+.page-fade-in {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    z-index: 1;
+}
+
+.page-index-fade-out {
+    opacity: 0;
+    -webkit-transform: translate3d(150px, 0, 0);
+}
+
+.page-playlist-fade-out {
+    opacity: 0;
+    -webkit-transform: translate3d(-150px, 0, 0);
+}
+
+/***player**/
+.player-wrapper {
+    position: absolute;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    z-index: 9;
+    background-color: black;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 90px auto;
+    border: 5px solid rgba(255, 255, 255, .2);
+    border-left-color: #FFF;
+    -webkit-animation: load 1.5s infinite linear;
+}
+
+@-webkit-keyframes load {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

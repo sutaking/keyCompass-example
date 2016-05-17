@@ -1,23 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router'
+
 import "babel-polyfill";
 
-import ListDemo from './listSample';
-import FocusSample from './focus/focus';
+//import ListDemo from './listSample';
+//import FocusSample from './focus/focus';
 
-require('../style/base.css')
+import MainPage from './pages/main';
+import Welcome from './pages/welcome';
 
-/*const appComponent = (<div>
-    <div className={'demo-title'}>React ListDemo</div>
-    <ListDemo/>
+import './styles/main.css';
+import './styles/button.css';
+import './styles/player.css';
+
+//<div className={'demo-title'}>React ListDemo</div>
+const appComponent = (<div>
+    <MainPage/>
     </div>);
 
 ReactDOM.render(
-    demoRouter, document.getElementById('container')
-);*/
+    appComponent, document.getElementById('container')
+);
 
-const listDemoComponent = React.createClass({
+/*const listDemoComponent = React.createClass({
 
     render() {
         return (<div className={'wrapper'}>
@@ -54,4 +59,4 @@ ReactDOM.render((
     <Route path="/FocusDemo" component={focusDemo}/>
   </Router>
 ), document.getElementById('container'));
-
+*/
