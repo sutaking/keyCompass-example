@@ -11,7 +11,7 @@ import Welcome from './pages/welcome';
 
 import './styles/main.css';
 import './styles/button.css';
-import './styles/player.css';
+//import './styles/player.css';
 
 //<div className={'demo-title'}>React ListDemo</div>
 const appComponent = (<div>

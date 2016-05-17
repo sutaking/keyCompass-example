@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;  
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgb(47,9,9), rgb(0,0,0) 30%);
+}
+
+.demo-title {
+  position: relative;
+  top:10px;
+  left: 112px;
+  height: 80px;
+  width: 1720px;
+  font-size: 50px;
+  color: white;
+  z-index: 1;
+}
+
+.list-warpper {
+  position: absolute;
+  overflow: hidden;
+  width: 1920px;
+  height: 4000px;
+  top: 130px;
+}
+
+.list-title {
+  color: white;
+  font-size: 30px;
+  margin: 0 0 1px 112px;
+}
+
+
+.list-items {
+  border: 6px solid #363C45;
+  box-sizing: border-box;
+}
+
+
+.box {
+  position: absolute;
+  margin-right: 5px;
+  width: 165px;
+  height: 165px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  background: yellow;
+  border: 6px solid #363C45;  
+  box-sizing: border-box;
+}
+
+.focused {
+  border: 6px solid #EEE;
+}
+
+.box.focused {
+  background: green;
+}
+
+.location1 {
+  left: 10px;
+  top: 100px;
+}
+
+.location2 {
+  left: 220px;
+  top: 100px;
+}
+
+.location3 {
+  left: 420px;
+  top: 100px;
+}
+.location4 {
+  left: 220px;
+  top: 310px;
+}
+.location5 {
+  left: 10px;
+  top: 300px;
+}
+
+.detail-container{
+  position: absolute;
+  left:500px;
+  top:250px;
+  width: 500px;
+  height: 400px;
+  opacity: 0.8;
+  background: gray;
+  border: 6px solid blue;  
+  box-sizing: border-box;
+}
+
+.location-d1 {
+  left: 10px;
+  top: 10px;
+}
+
+.location-d2 {
+  left: 200px;
+  top: 10px;
+}
