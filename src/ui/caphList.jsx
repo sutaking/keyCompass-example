@@ -49,7 +49,7 @@ const caphList = React.createClass({
 
     initListLayout() {
         const props = this.props;
-
+        
         listAreaWidth = props.style.width;
 
         itemWidth = this.getItemWidth(props.itemHeigh, props.aspectRatio)+props.padding;
@@ -206,7 +206,7 @@ const caphList = React.createClass({
 
     render() {
         const props = this.props;
-
+        
         this.initListLayout();
 
         const listChildren = React.Children.map(this.props.children, (currentChild, index)=>{

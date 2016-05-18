@@ -1,56 +1,82 @@
 import React from 'react';
+import { CaphList, CaphListItem } from '../../src/CaphReact';
+
+var onSelected = function(){
+    console.log(' - - - - - - - - - onSelected function...');
+    // Change depth example
+    //Focusable.controllerProvider.getInstance().setDepth(1);
+}
+
+var onFocused = function(){
+    console.log(' - - - - - - - - - onFocused function...');
+}
+
+var onBlurred = function(){
+    console.log(' - - - - - - - - - onBlurred function...');
+}
 
 const TEDtalkList = React.createClass({
 
-	render () {
+    render () {
 
-		var setItems = function () {
-		    var items = [];
+        var setItems = () => {
+            var items = [];
 
-		    var setInit = function(index) {
-		        var val = false;
-		        if (index === 0) {val = true;}
-		        return {initialFocus: val};
-		    };
+            var setInit =(index) => {
+                var val = false;
+                if (index === 0 && this.props.title === 'Newest releases') {val = true;}
+                return {initialFocus: val};
+            };
 
-		    const itemsStyle = {
-		        //background: 'rgba(105, 105, 105, .5)',
-		        //opacity: .3
-		        color: '#eee',
-		        fontSize: 40,
-		        lineHeight: '250px',
-		        textAlign: 'center'
-		    };
+            const itemsStyle = {
+                //background: 'rgba(105, 105, 105, .5)',
+                //opacity: .3
+                color: '#eee',
+                fontSize: 40,
+                lineHeight: '250px',
+                textAlign: 'center'
+            };
 
-		    for(var i=0; i<10; ++i) {
-		        items.push(
-		            < CaphListItem 
-		            key={i}
-		            focusable = {setInit(i)}
-		            onSelected = {onSelected}
-		            onFocused = {onFocused}
-		            onBlurred = {onBlurred}
-		            style={itemsStyle}>{i}
-		            </CaphListItem>
-		        );
-		    }
+            for(var i=0; i<10; ++i) {
+                items.push(
+                    < CaphListItem 
+                    key={i}
+                    focusable = {setInit(i)}
+                    onSelected = {onSelected}
+                    onFocused = {onFocused}
+                    onBlurred = {onBlurred}
+                    style={itemsStyle}>{i}
+                    </CaphListItem>
+                );
+            }
 
-		    return items;
-		};
+            return items;
+        };
 
-		const styleslistArea = {
-		    position: 'relative',
-		    top: 10,
-		    left: 30,
-		    height: 300,
-		    width:1800,
-		    marginBottom: 50,
-		};
-		
-		return (
+        const styleslistArea = {
+            position: 'absolute',
+            left: 112,
+            height: 265,
+            width: 1920,
+            marginTop: 0,
+           // overflow: 'hidden'
+        };//style={styleslistArea} className={'list-container list-scroll-wrapper'}
 
-		);
-	}
+        return (
+            <div className={'list-area'}>
+                <div className={'title font-label'}>{this.props.title}</div>
+                <CaphList 
+                    itemHeigh={250}
+                    aspectRatio={3}
+                    padding={20}
+                    direction={'h'}
+                    style={styleslistArea}
+                >
+                    {setItems()}
+                </CaphList>
+            </div>
+        );
+    }
 
 });
 

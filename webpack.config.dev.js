@@ -30,7 +30,7 @@ module.exports = {
         $: "jquery",
         jQuery: "jquery"
     }),*/
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("reat-caph-styles.css")
   ],
   module: {
     loaders: [
