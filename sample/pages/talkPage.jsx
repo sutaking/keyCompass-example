@@ -6,7 +6,7 @@ import {
     TedButton,
     TEDtalkList,
     TedDescription} 
-from '../component/tedComponent';
+from '../component/index';
 
 
 const TalkPage = React.createClass({
@@ -31,7 +31,7 @@ const TalkPage = React.createClass({
                     <TedDescription cut={false} data={des+des+des+des+des+des+des}/>
                     <TedButton />
                     <div className={'related-talk'}> 
-                        <TEDtalkList title={'Related talks'} data={testdata}/>
+                        <TEDtalkList size={3} title={'Related talks'} data={testdata}/>
                     </div>
                 </div>
             </div>

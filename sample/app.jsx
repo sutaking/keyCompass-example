@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, Link, browserHistory } from 'react-router';
 import "babel-polyfill";
 
-import MainPage from './pages/mainPage';
-import WelcomePage from './pages/welcome';
-import TalkPage from './pages/talkPage';
-import PlaylistTalkPage from './pages/playlistTalkPage';
-import PlaylistPage from './pages/playlistPage';
-
+import { MainPage, WelcomePage, TalkPage, PlaylistTalkPage, PlaylistPage} 
+from './pages/index'
 
 import './styles/main.css';
 import './styles/button.css';
@@ -29,7 +26,12 @@ const TEDapp = React.createClass({
     }
 });
 
-ReactDOM.render(
-    <TEDapp />, document.getElementById('container')
+ReactDOM.render((
+    <Router history={browserHistory}>
+        <Route path="/" component={TEDapp}/>
+        <Route path="/talk" component={TalkPage}/>
+        <Route path="/playlist" component={PlaylistPage}/>
+        <Route path="/playlist-talk" component={PlaylistTalkPage}/>
+    </Router>), document.getElementById('container')
 );
 

@@ -5,7 +5,7 @@ import {
     TedOverview,
     TedButton,
     TedDescription} 
-from '../component/tedComponent';
+from '../component/index';
 
 const PlaylistTalkPage = React.createClass({
 

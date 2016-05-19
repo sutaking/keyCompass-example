@@ -1,13 +1,13 @@
 import React from 'react';
 //var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
-//import { Router, Route, Link, browserHistory } from 'react-router';
+
 import {
     MainBackground,
     TedOverview,
     TEDtalkList,
     TedDescription} 
-from '../component/tedComponent';
+from '../component/index';
 
 const MainPage = React.createClass({
 
@@ -55,10 +55,10 @@ const MainPage = React.createClass({
                 </div>
                 <div className={'list-wrapper page'} style={this.state.moveListStyle}>
                     <div id={'list-category'} className={'list-category'}>
-                        <TEDtalkList index={0} move={this.scrollArea} title={'Newest releases'} data={testdata}/>
-                        <TEDtalkList index={1} move={this.scrollArea} title={'My talks'} data={testdata}/>
-                        <TEDtalkList index={2} move={this.scrollArea} title={'Trending'} data={testdata}/>
-                        <TEDtalkList index={3} move={this.scrollArea} title={'Playlists'} data={testdata}/>
+                        <TEDtalkList size={3} key={0} move={this.scrollArea} title={'Newest releases'} data={testdata}/>
+                        <TEDtalkList size={0} key={1} move={this.scrollArea} title={'My talks'} data={testdata}/>
+                        <TEDtalkList size={3} key={2} move={this.scrollArea} title={'Trending'} data={testdata}/>
+                        <TEDtalkList size={3} key={3} move={this.scrollArea} title={'Playlists'} data={testdata}/>
                     </div>                    
                 </div>
             </div>            

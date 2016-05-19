@@ -6,7 +6,7 @@ import {
     TedPlaylistButton,
     TEDtalkList,
     TedDescription} 
-from '../component/tedComponent';
+from '../component/index';
 
 const PlaylistPage = React.createClass({
 
@@ -29,7 +29,7 @@ const PlaylistPage = React.createClass({
         	        <TedDescription cut={false} data={des}/>
         	        <TedPlaylistButton />
         	        <div className={'list-wrapper list-wrapper-playlist page'}> 
-        	            <TEDtalkList title={'8 talks in this playlist'} data={testdata}/>
+        	            <TEDtalkList size={3} title={'8 talks in this playlist'} data={testdata}/>
         	        </div>
         	    </div>
         	</div>

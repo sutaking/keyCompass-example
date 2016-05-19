@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var itemWidth, itemHeight, limitRows, limitCols, listAreaWidth, listLength;
+var itemWidth,itemHeight, limitRows, limitCols, listAreaWidth, listLength;
 
 const caphList = React.createClass({
 
@@ -56,7 +56,6 @@ const caphList = React.createClass({
         itemHeight = props.itemHeigh + props.padding;
         limitRows = this.getLimit(listAreaWidth, itemWidth);
         limitCols = this.getLimit(this.props.style.height, itemHeight);
-
     },
 
     isListEnd(index) {
@@ -67,6 +66,7 @@ const caphList = React.createClass({
     },
 
     moveList(index, item, keyCode) {
+        this.initListLayout();
         const props = this.props;
 
         var currentList = ReactDOM.findDOMNode(this);

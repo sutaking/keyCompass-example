@@ -65,14 +65,16 @@ const TEDtalkList = React.createClass({
             width: 1920,
             marginTop: 0,
            // overflow: 'hidden'
-        };//style={styleslistArea} className={'list-container list-scroll-wrapper'}
+        };
+
+        const ratio = this.props.size;
 
         return (
             <div className={'list-area'}>
                 <div className={'title font-label'}>{this.props.title}</div>
                 <CaphList 
                     itemHeigh={250}
-                    aspectRatio={3}
+                    aspectRatio={this.props.size}
                     padding={20}
                     direction={'h'}
                     style={styleslistArea}
