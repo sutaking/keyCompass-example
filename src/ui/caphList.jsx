@@ -206,7 +206,6 @@ const caphList = React.createClass({
 
     render() {
         const props = this.props;
-        
         this.initListLayout();
 
         const listChildren = React.Children.map(this.props.children, (currentChild, index)=>{

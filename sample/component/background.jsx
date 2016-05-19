@@ -2,20 +2,19 @@ import React from 'react';
 
 const MainBackground = React.createClass({
 
-	render () {
+    render () {
+        const stageStyle = {
+            background: 'url('+ this.props.url+') top right no-repeat',
+            backgroundSize: '1252px auto'
+        }
 
-		const stageStyle = {
-		    background: 'url(./sample/images/bkgrd_watch_anything.jpg) top right no-repeat',
-		    backgroundSize: '1252px auto'
-		}
-
-		return (
-			<div id={'stage'} className={'stage stage-transition talk opacity-light'} 
-			style={stageStyle}>
-			    <div className={'shadow shadow-big'}></div>
-			</div>
-		);
-	}
+        return (
+            <div id={'stage'} className={'stage stage-transition talk opacity-light'} 
+            style={stageStyle}>
+                <div className={'shadow shadow-big'}></div>
+            </div>
+        );
+    }
 
 });
 

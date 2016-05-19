@@ -2,7 +2,7 @@ import React from 'react';
 import { CaphList, CaphListItem } from '../../src/CaphReact';
 
 var onSelected = function(){
-    console.log(' - - - - - - - - - onSelected function...');
+    //console.log(' - - - - - - - - - onSelected function...');
     // Change depth example
     //Focusable.controllerProvider.getInstance().setDepth(1);
 }
@@ -12,14 +12,19 @@ var onFocused = function(){
 }
 
 var onBlurred = function(){
-    console.log(' - - - - - - - - - onBlurred function...');
+    //console.log(' - - - - - - - - - onBlurred function...');
 }
 
 const TEDtalkList = React.createClass({
 
     render () {
 
-        var setItems = () => {
+        /*var _handleSelected = function (index) {
+            console.log(index);
+            //this.props.move(index)
+        }*/
+
+        var setItems = (data, index) => {
             var items = [];
 
             var setInit =(index) => {
@@ -37,7 +42,7 @@ const TEDtalkList = React.createClass({
                 textAlign: 'center'
             };
 
-            for(var i=0; i<10; ++i) {
+            for(var i=0; i<data.length; ++i) {
                 items.push(
                     < CaphListItem 
                     key={i}
@@ -72,7 +77,7 @@ const TEDtalkList = React.createClass({
                     direction={'h'}
                     style={styleslistArea}
                 >
-                    {setItems()}
+                    {setItems(this.props.data, this.props.index)}
                 </CaphList>
             </div>
         );

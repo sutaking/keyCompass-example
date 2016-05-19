@@ -7,7 +7,7 @@ import Focusable from './focus/focusable';
 require('./style/base.css')
 
 module.exports = {
-	CaphList,
-	CaphListItem,
-	Focusable
+    CaphList,
+    CaphListItem,
+    Focusable
 };

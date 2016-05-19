@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "babel-polyfill";
 
-import MainPage from './pages/main';
+import MainPage from './pages/mainPage';
 import WelcomePage from './pages/welcome';
+import TalkPage from './pages/talkPage';
+import PlaylistTalkPage from './pages/playlistTalkPage';
+import PlaylistPage from './pages/playlistPage';
+
 
 import './styles/main.css';
 import './styles/button.css';
@@ -19,7 +23,7 @@ const TEDapp = React.createClass({
     render () {
         setTimeout(() => {
             this._enterApp();
-        }, 1000);
+        }, 100);
 
         return (this.state.showData ? <MainPage/> : <WelcomePage/>);
     }
