@@ -1,4 +1,5 @@
 import React from 'react';
+import fecth from 'isomorphic-fetch';
 //var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 
@@ -28,6 +29,7 @@ const MainPage = React.createClass({
 
     render() {
         //className={'move-container opacity-light'}
+        let props = this.props;
 
         const getLight = 'move-container opacity-light';
         const getDark = 'move-container opacity-dark';
@@ -53,15 +55,15 @@ const MainPage = React.createClass({
                         </div>
                     </div>
                 </div>
-                <div className={'list-wrapper page'} style={this.state.moveListStyle}>
-                    <div id={'list-category'} className={'list-category'}>
+                <div className={'list-wrapper page'}>
+                    <div id={'list-category'} className={'list-category'} style={this.state.moveListStyle}>
                         <TEDtalkList size={3} key={0} move={this.scrollArea} title={'Newest releases'} data={testdata}/>
                         <TEDtalkList size={0} key={1} move={this.scrollArea} title={'My talks'} data={testdata}/>
                         <TEDtalkList size={3} key={2} move={this.scrollArea} title={'Trending'} data={testdata}/>
                         <TEDtalkList size={3} key={3} move={this.scrollArea} title={'Playlists'} data={testdata}/>
-                    </div>                    
+                    </div>
                 </div>
-            </div>            
+            </div>
         );
     }
 });

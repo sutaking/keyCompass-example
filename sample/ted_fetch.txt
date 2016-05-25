@@ -1,0 +1,50 @@
+API List:
+
+Speakers:
+
+https://app-api.ted.com/v1/speakers.json?limit=2000&api-key=b26yxyqwkx8fmtuttfavssf6&filter=updated_at:%3E2015-07-15
+
+Events:
+
+https://app-api.ted.com/v1/events.json?limit=1000&api-key=b26yxyqwkx8fmtuttfavssf6&filter=updated_at:%3E2015-07-15
+
+Talk catalogs:
+
+https://app-api.ted.com/v1/talk_catalogs/android_v1.json?api-key=b26yxyqwkx8fmtuttfavssf6&limit=400&offset=0&externals=false&fields=duration_in_seconds,short_url&filter=updated_at:%3E2015-07-15
+
+Talk Languages:
+
+https://app-api.ted.com/v1/talk_languages/android_v1.json?limit=2000&api-key=b26yxyqwkx8fmtuttfavssf6&filter=updated_at:%3E2015-07-15
+
+Talk (popular - mobile):
+
+https://app-api.ted.com/v1/talks/ids.json?sort=popular&podcasts=true&api-key=b26yxyqwkx8fmtuttfavssf6
+
+Talk Translations:
+
+https://app-api.ted.com/v1/talk_translations/android_v1.json?api-key=xxxxx&limit=200&language=de&offset=0&externals=false&only_subtitled=true&sort=newest
+
+Playlist:
+
+https://app-api.ted.com/v1/playlists.json?fields=playlist_items,suggestions,attribution_data,duration_in_seconds,image,guest_curated,original_image&limit=50&offset=0&api-key=b26yxyqwkx8fmtuttfavssf6&image_size=424x424&filter=updated_at:%3E2015-07-15
+
+Dynamic Configuration:
+
+https://app-api.ted.com/v1/app_configs/android.json?api-key=b26yxyqwkx8fmtuttfavssf6
+
+Subtitle:
+
+https://app-api.ted.com/v1/talks/2303/captions.json?language=en,af&api-key=b26yxyqwkx8fmtuttfavssf6
+https://api.ted.com/v1/languages/1.json?api-key=b26yxyqwkx8fmtuttfavssf6
+
+Image scaling:
+
+http://img.tedcdn.com/r/assets.tedcdn.com/images/playlists/insects_are_awesome.jpg?ll=1&w=319
+
+Trending:
+
+http://api.videometrics.ted.com/ted_talks/trending?limit=100&api-key=b26yxyqwkx8fmtuttfavssf6
+
+Metrics:
+
+https://metrics.ted.com/v1/events

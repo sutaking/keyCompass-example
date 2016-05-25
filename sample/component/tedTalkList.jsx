@@ -1,10 +1,12 @@
 import React from 'react';
+import { browserHistory } from 'react-router'
 import { CaphList, CaphListItem } from '../../src/CaphReact';
 
 var onSelected = function(){
     //console.log(' - - - - - - - - - onSelected function...');
     // Change depth example
     //Focusable.controllerProvider.getInstance().setDepth(1);
+    browserHistory.push('/talk')
 }
 
 var onFocused = function(){

@@ -10,6 +10,10 @@ import './styles/main.css';
 import './styles/button.css';
 //import './styles/player.css';
 
+import {testJsonp} from './redux/action'
+
+testJsonp();
+
 const TEDapp = React.createClass({
     getInitialState() {
         return { showData: false};
