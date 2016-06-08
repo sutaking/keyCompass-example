@@ -29,8 +29,9 @@ export function testJsonp() {
 export function updataTalkLists (index) {
     return {
         type: GET_TALK_LISTS,
-        index
+        index: index
     }
 };
+
 
 

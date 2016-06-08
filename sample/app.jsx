@@ -1,18 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 import "babel-polyfill";
 
 import { MainPage, WelcomePage, TalkPage, PlaylistTalkPage, PlaylistPage} 
-from './pages/index'
+from './pages/index';
+import configureStore from './redux/store';
 
 import './styles/main.css';
 import './styles/button.css';
 //import './styles/player.css';
 
-import {testJsonp} from './redux/action'
-
-testJsonp();
+//import {testJsonp} from './redux/action'
+//testJsonp();
+const store = configureStore();
+const mainPage = () => {
+    return (
+        <Provider store={store}>
+            <MainPage/>
+        </Provider>
+    );
+};
 
 const TEDapp = React.createClass({
     getInitialState() {
@@ -26,7 +35,7 @@ const TEDapp = React.createClass({
             this._enterApp();
         }, 100);
 
-        return (this.state.showData ? <MainPage/> : <WelcomePage/>);
+        return (this.state.showData ? mainPage() : <WelcomePage/>);
     }
 });
 
