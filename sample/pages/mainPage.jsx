@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 //import classNames from 'classnames'
 //var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
@@ -71,4 +72,9 @@ const MainPage = React.createClass({
     }
 });
 
-module.exports = MainPage;
+function mapState(state) {
+    return {test: state.test};
+};
+
+//module.exports = MainPage;
+export default connect(mapState)(MainPage);

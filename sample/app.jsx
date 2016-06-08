@@ -15,13 +15,6 @@ import './styles/button.css';
 //import {testJsonp} from './redux/action'
 //testJsonp();
 const store = configureStore();
-const mainPage = () => {
-    return (
-        <Provider store={store}>
-            <MainPage/>
-        </Provider>
-    );
-};
 
 const TEDapp = React.createClass({
     getInitialState() {
@@ -35,16 +28,18 @@ const TEDapp = React.createClass({
             this._enterApp();
         }, 100);
 
-        return (this.state.showData ? mainPage() : <WelcomePage/>);
+        return (this.state.showData ? <MainPage/> : <WelcomePage/>);
     }
 });
 
 ReactDOM.render((
-    <Router history={browserHistory}>
-        <Route path="/" component={TEDapp}/>
-        <Route path="/talk" component={TalkPage}/>
-        <Route path="/playlist" component={PlaylistPage}/>
-        <Route path="/playlist-talk" component={PlaylistTalkPage}/>
-    </Router>), document.getElementById('container')
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path="/" component={TEDapp}/>
+            <Route path="/talk" component={TalkPage}/>
+            <Route path="/playlist" component={PlaylistPage}/>
+            <Route path="/playlist-talk" component={PlaylistTalkPage}/>
+        </Router>
+    </Provider>), document.getElementById('container')
 );
 
