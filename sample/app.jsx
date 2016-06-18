@@ -14,7 +14,9 @@ import './styles/button.css';
 
 //import {testJsonp} from './redux/action'
 //testJsonp();
+import { updataTalkLists } from './redux/action';
 const store = configureStore();
+//store.dispatch(updataTalkLists(1));
 
 const TEDapp = React.createClass({
     getInitialState() {
@@ -24,10 +26,10 @@ const TEDapp = React.createClass({
         this.setState({showData: true});
     },
     render () {
+
         setTimeout(() => {
             this._enterApp();
         }, 100);
-
         return (this.state.showData ? <MainPage/> : <WelcomePage/>);
     }
 });

@@ -9,10 +9,17 @@ import {
     TEDtalkList,
     TedDescription} 
 from '../component/index';
+import { updataTalkLists } from '../redux/action';
 
 const MainPage = React.createClass({
 
+    propTypes: {
+        dispatch: React.PropTypes.func.isRequired
+    },
+
     getInitialState () {
+        dispatch(updataTalkLists(1));
+        console.log(this.state);
         return {
             getLightClass: 'move-container opacity-light',
             getDrakClass: 'move-container opacity-dark',
@@ -44,6 +51,7 @@ const MainPage = React.createClass({
 
     render() {
         //className={'move-container opacity-light'}
+        
         let props = this.props;
         //console.log(this.state.testdata);
         return (

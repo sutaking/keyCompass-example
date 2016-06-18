@@ -27,9 +27,11 @@ export function testJsonp() {
 };
 
 export function updataTalkLists (index) {
+  console.log('updataTalkLists');
     return {
         type: GET_TALK_LISTS,
-        index: index
+        index: index,
+        test: 'hahahahah'
     }
 };
 
