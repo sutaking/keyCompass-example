@@ -35,7 +35,7 @@ const caphList = React.createClass({
         /**
          * event func for focus.
          */
-        //onBoxFocus: React.PropTypes.func
+        scrollArea: React.PropTypes.func
 
     },
 
@@ -225,6 +225,7 @@ const caphList = React.createClass({
             
             return React.cloneElement(currentChild, 
                 {   scrollList: this.moveList,
+                    scrollArea: this.props.scrollArea,
                     className: 'list-items',
                     index: index,
                     style:Object.assign({}, currentChild.props.style, positionStyle) 

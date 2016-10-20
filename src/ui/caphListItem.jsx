@@ -19,9 +19,9 @@ const CaphListItem = React.createClass({
          */
         index: React.PropTypes.number,
 
-        //onBoxFocus: React.PropTypes.func,
+        scrollArea: React.PropTypes.func,
 
-        //listAreaIndex: React.PropTypes.number
+        listAreaIndex: React.PropTypes.number
 
     },
 
@@ -35,8 +35,9 @@ const CaphListItem = React.createClass({
         /*this.setState({
             className: this.props.className + ' focused'
         });*/
+        //console.log(this.props.listAreaIndex);
         this.props.scrollList(this.props.index, ReactDOM.findDOMNode(this), keyCode);
-        //this.props.onBoxFocus(this.props.listAreaIndex);
+        this.props.scrollArea(this.props.listAreaIndex);
     },
 
     blur: function(keyCode) {

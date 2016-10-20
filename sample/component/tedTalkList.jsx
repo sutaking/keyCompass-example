@@ -6,11 +6,12 @@ var onSelected = function(){
     //console.log(' - - - - - - - - - onSelected function...');
     // Change depth example
     //Focusable.controllerProvider.getInstance().setDepth(1);
-    browserHistory.push('/talk')
+    //browserHistory.push('/talk')
 }
 
-var onFocused = function(){
-    console.log(' - - - - - - - - - onFocused function...');
+var onFocused = function(index){
+    //console.log(' - - - - onFocused function - - - - - ');
+
 }
 
 var onBlurred = function(){
@@ -36,7 +37,7 @@ const TEDtalkList = React.createClass({
             };
 
             const itemsStyle = {
-                //background: 'rgba(105, 105, 105, .5)',
+                background: 'rgba(105, 105, 105, .5)',
                 //opacity: .3
                 color: '#eee',
                 fontSize: 40,
@@ -48,9 +49,10 @@ const TEDtalkList = React.createClass({
                 items.push(
                     < CaphListItem 
                     key={i}
+                    listAreaIndex={this.props.listindex}
                     focusable = {setInit(i)}
                     onSelected = {onSelected}
-                    onFocused = {onFocused}
+                    onFocused = {onFocused(i)}
                     onBlurred = {onBlurred}
                     style={itemsStyle}>{i}
                     </CaphListItem>
@@ -80,6 +82,7 @@ const TEDtalkList = React.createClass({
                     padding={20}
                     direction={'h'}
                     style={styleslistArea}
+                    scrollArea={this.props.move}
                 >
                     {setItems(this.props.data, this.props.index)}
                 </CaphList>

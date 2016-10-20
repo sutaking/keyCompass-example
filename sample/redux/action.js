@@ -21,6 +21,7 @@ export function testJsonp() {
         return response.json()
       }).then(function(data) {
         console.log('parsed data', data)
+        //return data;
       }).catch(function(ex) {
         console.log('parsing failed', ex)
       })
@@ -29,7 +30,7 @@ export function testJsonp() {
 export function updataTalkLists (index) {
   console.log('updataTalkLists');
     return {
-        type: GET_TALK_LISTS,
+        type: 'GET_TALK_LISTS',
         index: index,
         test: 'hahahahah'
     }

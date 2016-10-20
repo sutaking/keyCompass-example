@@ -12,11 +12,12 @@ import './styles/main.css';
 import './styles/button.css';
 //import './styles/player.css';
 
-//import {testJsonp} from './redux/action'
-//testJsonp();
+import {testJsonp} from './redux/action'
+testJsonp();
+
 import { updataTalkLists } from './redux/action';
 const store = configureStore();
-//store.dispatch(updataTalkLists(1));
+store.dispatch(updataTalkLists(1));
 
 const TEDapp = React.createClass({
     getInitialState() {
