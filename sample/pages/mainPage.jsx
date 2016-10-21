@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 //import classNames from 'classnames'
 //var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
@@ -9,19 +10,22 @@ import {
     TEDtalkList,
     TedDescription} 
 from '../component/index';
+
 import { updataTalkLists } from '../redux/action';
 
-
+const testDispatchToProps = dispatch => ({
+    testFunc: () => dispatch(updataTalkLists(1))
+});
 
 const MainPage = React.createClass({
 
     propTypes: {
-        dispatch: React.PropTypes.func.isRequired
+        //dispatch: React.PropTypes.func.isRequired
     },
 
     getInitialState () {
         //dispatch(updataTalkLists(1));
-        console.log(window.store);
+        //testFunc();
         return {
             getLightClass: 'move-container opacity-light',
             getDrakClass: 'move-container opacity-dark',
@@ -37,8 +41,7 @@ const MainPage = React.createClass({
     },
 
     scrollArea (index) {
-        //console.log(index);
-        var moveListStyle = {
+        let moveListStyle = {
             transition: '.5s transform ease-out',
             transform: 'translate3d(0,'+ index * -374 +'px,0)',
         };
@@ -49,6 +52,10 @@ const MainPage = React.createClass({
 
     componentDidMount() {
         //this.setState();
+    },
+
+    componentWillMount() {
+
     },
 
     render() {
@@ -85,5 +92,5 @@ function mapState(state) {
     return {test: state.test};
 };
 
-//module.exports = MainPage;
+
 export default connect(mapState)(MainPage);
