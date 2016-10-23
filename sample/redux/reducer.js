@@ -15,10 +15,13 @@
 };*/
 
 export const talkReducer = (state, action) => {
-
+    console.log(action);
     switch(action.type) {
+        case 'RECEIVE_TALKS':
+            console.log(action);
+            return action.data.cards || state;
         case 'GET_TALK_LISTS':
-            console.log(action.talks);
+            console.log(action);
             return Object.assign({}, state, {talk:action.talks});
         default:
             return state || '';

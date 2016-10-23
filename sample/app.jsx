@@ -4,6 +4,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Router, Route, Link, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
 import "babel-polyfill";
 
 import { MainPage, WelcomePage, TalkPage, PlaylistTalkPage, PlaylistPage} 
@@ -16,7 +17,7 @@ import './styles/main.css';
 import './styles/button.css';
 //import './styles/player.css';
 
-const store = createStore(combineReducers({reducers, routing:routerReducer}));
+const store = createStore(combineReducers({reducers, routing:routerReducer}), applyMiddleware(thunkMiddleware));
 const history = syncHistoryWithStore(browserHistory, store);
 
 const TEDapp = React.createClass({
@@ -47,7 +48,8 @@ function start() {
     );
 }
 
-fetchTalks();
+
+store.dispatch(fetchTalks());
 start();
 
 

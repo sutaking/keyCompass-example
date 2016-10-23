@@ -12,23 +12,32 @@ const PHOTO_URL = '&photo_url_sizes=615x461,800x600,1600x1200,original';
 const GET_TALK_LISTS = 'GET_TALK_LISTS';
 const GET_TALK = 'GET_TALK';
 
+const testData ='../testdata/test.json';
+//var url = 'https://app-api.ted.com/v1/talks/ids.json?sort=popular&podcasts=true&api-key=b26yxyqwkx8fmtuttfavssf6';
+const url = REQUEST_HEADER +REQUEST_TALKS+ API_KEY + TALKS_FIELDS + TALKS_SORT + TALKS_ORDER
++TALKS_LIMIT+PHOTO_URL;
+
 export const receiveData = data => ({ type: 'RECEIVE_TALKS', data: data });
 
-export function fetchTalks() {
-    //var url = 'https://app-api.ted.com/v1/talks/ids.json?sort=popular&podcasts=true&api-key=b26yxyqwkx8fmtuttfavssf6';
-    const url = REQUEST_HEADER +REQUEST_TALKS+ API_KEY + TALKS_FIELDS + TALKS_SORT + TALKS_ORDER
-    +TALKS_LIMIT+PHOTO_URL;
-    return fetchJsonp(url)
+export const fetchTalks = () => {
+
+
+    /*return fetchJsonp(url)//fetchJsonp
       .then(res => res.json())
       .then(data => {
-        //console.log('parsed data', data);
-        dispatch(receiveData(data));
+        console.log('parsed data', data);
       }).catch(ex => {
         console.log('parsing failed', ex)
-      })
+      })*/
+    return dispatch => {
+    fetch(testData)
+      .then(res => res.json())
+      .then(json => dispatch(receiveData(json)));
+  };
+
 };
 
-export function updataTalkLists (index) {
+export const updataTalkLists = (index) => {
 
     let data = {
       title: 'Automated playlist',
