@@ -1,27 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 //import classNames from 'classnames'
 //var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
 import {
     MainBackground,
     TedOverview,
     TEDtalkList,
     TedDescription} 
 from '../component/index';
-import { updataTalkLists } from '../redux/action';
 
+import { updataTalkLists, receiveData, fetchTalks, showData} from '../redux/action';
 
+const mapStateToProps = (newTalks) => ({
+    newTalks
+});
+
+const mapDispatchToProps = dispatch => ({
+    testFunc: () => dispatch(updataTalkLists(1)),
+    receiveData: () => dispatch(receiveData())
+});
 
 const MainPage = React.createClass({
 
     propTypes: {
-        dispatch: React.PropTypes.func.isRequired
+        //dispatch: React.PropTypes.func.isRequired
     },
 
     getInitialState () {
-        //dispatch(updataTalkLists(1));
-        console.log(window.store);
+        //testFunc();
         return {
             getLightClass: 'move-container opacity-light',
             getDrakClass: 'move-container opacity-dark',
@@ -37,8 +44,7 @@ const MainPage = React.createClass({
     },
 
     scrollArea (index) {
-        //console.log(index);
-        var moveListStyle = {
+        let moveListStyle = {
             transition: '.5s transform ease-out',
             transform: 'translate3d(0,'+ index * -374 +'px,0)',
         };
@@ -48,13 +54,19 @@ const MainPage = React.createClass({
     },
 
     componentDidMount() {
-        //this.setState();
+
+    },
+
+    componentWillMount() {
+
     },
 
     render() {
         //className={'move-container opacity-light'}
         let props = this.props;
+        //console.log(props.newTalks);
 
+        const titles = ['Newest releases','My talks','Trending','Playlists'];
         return (
             <div id={'myWrapper'} className={'wrapper'}>
                 <MainBackground url={this.state.testdata.url}/>
@@ -70,20 +82,20 @@ const MainPage = React.createClass({
                 </div>
                 <div className={'list-wrapper page'}>
                     <div id={'list-category'} className={'list-category'} style={this.state.moveListStyle}>
-                        <TEDtalkList size={3} key={0} listindex={0} move={this.scrollArea} title={'Newest releases'} data={this.state.testdata}/>
-                        <TEDtalkList size={3} key={1} listindex={1} move={this.scrollArea} title={'My talks'} data={this.state.testdata}/>
-                        <TEDtalkList size={3} key={2} listindex={2} move={this.scrollArea} title={'Trending'} data={this.state.testdata}/>
-                        <TEDtalkList size={0} key={3} listindex={3} move={this.scrollArea} title={'Playlists'} data={this.state.testdata}/>
+                        <TEDtalkList size={3} key={0} listindex={0} move={this.scrollArea} title={'Newest releases'} data={props.newTalks}/>
                     </div>
                 </div>
             </div>
         );
     }
 });
+//<TEDtalkList size={3} key={1} listindex={1} move={this.scrollArea} title={'My talks'} data={this.state.testdata}/>
+//<TEDtalkList size={3} key={2} listindex={2} move={this.scrollArea} title={'Trending'} data={this.state.testdata}/>
+//<TEDtalkList size={0} key={3} listindex={3} move={this.scrollArea} title={'Playlists'} data={this.state.testdata}/>
 
 function mapState(state) {
     return {test: state.test};
 };
 
-//module.exports = MainPage;
-export default connect(mapState)(MainPage);
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

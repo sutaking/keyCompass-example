@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
     MainBackground,
@@ -39,4 +40,5 @@ const TalkPage = React.createClass({
     }
 });
 
-module.exports = TalkPage;
+//module.exports = TalkPage;
+export default connect(state => state)(TalkPage);
