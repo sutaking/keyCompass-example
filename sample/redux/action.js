@@ -17,28 +17,21 @@ const testData ='../testdata/test.json';
 const url = REQUEST_HEADER +REQUEST_TALKS+ API_KEY + TALKS_FIELDS + TALKS_SORT + TALKS_ORDER
 +TALKS_LIMIT+PHOTO_URL;
 
-export const receiveData = data => ({ type: 'RECEIVE_TALKS', data: data });
+export const receiveData = data => ({type: 'RECEIVE_TALKS', data});
 
 export const fetchTalks = () => {
-
-
-    /*return fetchJsonp(url)//fetchJsonp
-      .then(res => res.json())
-      .then(data => {
-        console.log('parsed data', data);
-      }).catch(ex => {
-        console.log('parsing failed', ex)
-      })*/
     return dispatch => {
-    fetch(testData)
+    //fetch(testData)
+    fetchJsonp(url)
       .then(res => res.json())
-      .then(json => dispatch(receiveData(json)));
+      .then(json => dispatch(receiveData(json)))
+      .catch(ex => { console.log('parsing failed', ex)});
   };
 
 };
 
 export const updataTalkLists = (index) => {
-
+    //console.log(2222);
     let data = {
       title: 'Automated playlist',
       name: 'Watch anything',

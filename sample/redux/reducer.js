@@ -14,15 +14,12 @@
     }
 };*/
 
-export const talkReducer = (state, action) => {
-    console.log(action);
+export const newTalks = (state, action) => {
     switch(action.type) {
         case 'RECEIVE_TALKS':
-            console.log(action);
-            return action.data.cards || state;
+            return Object.assign({}, state, {data:action.data.talks});
         case 'GET_TALK_LISTS':
-            console.log(action);
-            return Object.assign({}, state, {talk:action.talks});
+            return Object.assign({}, state, {testtalks:action.talks});
         default:
             return state || '';
     }

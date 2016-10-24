@@ -10,14 +10,15 @@ import "babel-polyfill";
 import { MainPage, WelcomePage, TalkPage, PlaylistTalkPage, PlaylistPage} 
 from './pages/index';
 
+import { fetchTalks} from './redux/action';
 import * as reducers from './redux/reducer';
-import { fetchTalks } from './redux/action';
+reducers.routing = routerReducer;
 
 import './styles/main.css';
 import './styles/button.css';
 //import './styles/player.css';
 
-const store = createStore(combineReducers({reducers, routing:routerReducer}), applyMiddleware(thunkMiddleware));
+const store = createStore(combineReducers(reducers), applyMiddleware(thunkMiddleware));
 const history = syncHistoryWithStore(browserHistory, store);
 
 const TEDapp = React.createClass({
@@ -36,21 +37,30 @@ const TEDapp = React.createClass({
 });
 
 function start() {
+    let state = store.getState();
+
+    const routes = (
+        <Route path='/' component={TEDapp}> 
+            <Route path='/talk' component={TalkPage}/>
+            <Route path='/playlist' component={PlaylistPage}/>
+            <Route path='/playlist-talk' component={PlaylistTalkPage}/>
+        </Route>
+    );
+
     ReactDOM.render((
         <Provider store={store}>
-            <Router history={history}>
-                <Route path='/' component={TEDapp}/>
-                <Route path='/talk' component={TalkPage}/>
-                <Route path='/playlist' component={PlaylistPage}/>
-                <Route path='/playlist-talk' component={PlaylistTalkPage}/>
-            </Router>
+           <Router history={history}>
+               {routes}
+           </Router>
         </Provider>), document.getElementById('container')
     );
 }
 
-
-store.dispatch(fetchTalks());
 start();
+store.dispatch(fetchTalks());
+
+//store.subscribe(start);
+
 
 
 

@@ -28,6 +28,11 @@ const TEDtalkList = React.createClass({
         }*/
 
         var setItems = (data, index) => {
+            if(!data.newTalks) {
+                console.log(1111);
+                return(<div/>);
+            }
+            var talks = data.newTalks.data;
             var items = [];
 
             var setInit =(index) => {
@@ -37,15 +42,15 @@ const TEDtalkList = React.createClass({
             };
 
             const itemsStyle = {
-                background: 'rgba(105, 105, 105, .5)',
-                //opacity: .3
                 color: '#eee',
                 fontSize: 40,
                 lineHeight: '250px',
-                textAlign: 'center'
+                textAlign: 'center',
+                WebkitBackgroundSize:'100% auto'
             };
 
-            for(var i=0; i<data.length; ++i) {
+            for(var i=0; i<talks.length; ++i) {
+                //console.log(talks[i].talk.photo_urls[0].url)
                 items.push(
                     < CaphListItem 
                     key={i}
@@ -54,7 +59,7 @@ const TEDtalkList = React.createClass({
                     onSelected = {onSelected}
                     onFocused = {onFocused(i)}
                     onBlurred = {onBlurred}
-                    style={itemsStyle}>{i}
+                    style={Object.assign({}, itemsStyle, {'background': 'url('+talks[i].talk.photo_urls[0].url+')'})}>
                     </CaphListItem>
                 );
             }
