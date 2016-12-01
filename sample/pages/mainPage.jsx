@@ -39,7 +39,7 @@ const MainPage = React.createClass({
                 length: 80,
                 url: './sample/images/bkgrd_watch_anything.jpg'
             },
-            des: 'w Do not know what to watch? We will decide for you, from our library of over 1700 talks.'
+            des: 'Do not know what to watch? We will decide for you, from our library of over 1700 talks.'
         };
     },
 
@@ -92,10 +92,5 @@ const MainPage = React.createClass({
 //<TEDtalkList size={3} key={1} listindex={1} move={this.scrollArea} title={'My talks'} data={this.state.testdata}/>
 //<TEDtalkList size={3} key={2} listindex={2} move={this.scrollArea} title={'Trending'} data={this.state.testdata}/>
 //<TEDtalkList size={0} key={3} listindex={3} move={this.scrollArea} title={'Playlists'} data={this.state.testdata}/>
-
-function mapState(state) {
-    return {test: state.test};
-};
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
