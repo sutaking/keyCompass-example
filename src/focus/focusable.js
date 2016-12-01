@@ -1,7 +1,8 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EventEmitterMixin from '../../node_modules/react-event-emitter-mixin/EventEmitterMixin';
+//import EventEmitterMixin from '../../node_modules/react-event-emitter-mixin/EventEmitterMixin';
+import EventEmitterMixin from 'react-event-emitter-mixin'
 
 var Constant = {
     DIRECTION: {
